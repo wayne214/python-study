@@ -1,0 +1,96 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+
+str1 = 'wayne2222'
+iter1 = iter(str1)
+
+while True:
+    try:
+        print(next(iter1), end= ' ')
+    except StopIteration:
+        break
+
+print('\n')
+
+print('\n'.join([' '.join ('%dx%d=%2d' % (x,y,x*y)  for x in range(1,y+1)) for y in range(1,10)]))
+
+list1 = list(range(1, 20))
+print(list1)
+# list 生成式
+# 用【】括起来，然后里面的语句是把要生成的元素放在前面，后面加for循环或者for循环和判断
+list2 = [x * x for x in range(1, 10)]
+print(list2)
+
+list3 = [x * x for x in range(1, 10) if x % 2 == 0]
+print(list3)
+
+print('---------------------')
+
+# 使用函数创建生成器
+def my_function():
+    for i in range(10):
+        yield i
+
+
+print(my_function())
+
+for num in my_function():
+    print(num)
+
+def fibon(n):
+    a = b = 1
+    for i in range(n):
+        yield a,
+        a, b= b, a+b
+
+# for x in fibon(100000):
+#     print(x, end=' ')
+list5 = [1,2,3,4,5]
+for num in list5:
+    print(num, end=' ')
+# 反向迭代
+for num in reversed(list5):
+    print(num, end=' ')
+
+print('----------------')
+  # 自定义类实现 __reversed__() 方法来实现反向迭代
+class Countdown:
+    def __init__(self, start):
+        self.start = start
+    def __iter__(self):
+        n = self.start
+        while n>0:
+            yield n
+            n -= 1
+    def __reversed__(self):
+        n = 1
+        while n <= self.start:
+            yield n
+            n += 1
+
+for rr in Countdown(30):
+    print(rr, end= ' ')
+print('\n')
+
+for rr in reversed(Countdown(30)):
+    print(rr, end= ' ')
+print('\n')
+
+print('-----------------')
+
+print('\n')
+
+# 同时迭代多个序列
+# 其实 zip(a, b) 会生成一个可返回元组 (x, y) 的迭代器，其中 x 来自 a，y 来自 b。
+# 一旦其中某个序列到底结尾，迭代宣告结束。
+# 因此迭代长度跟参数中最短序列长度一致。
+# 注意理解这句话喔，也就是说如果 a ， b 的长度不一致的话，
+# 以最短的为标准，遍历完后就结束。
+names = ['liangdianshui', 'towwww', '哈哈']
+ages = [20, 19, 29]
+for name, age in zip(names, ages):
+    print(name, age)
+print('\n')
+
+dict1 = dict(zip(names, ages))
+print(dict1)

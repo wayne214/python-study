@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+
+
+def print_info(name, age, *hobby):
+    print ('姓名：{}'.format(name), end='')
+    print ('年龄：{}'.format(age), end='')
+    for var in hobby:
+        print ('爱好：{}'.format(var), end='')
+    return
+
+
+print_info('hha', 11, '足球', '篮球')
+
+sum = lambda num1, num2 : num1 + num2;
+print (sum(1, 2))
+
+for char in 'wayne214' :
+    print (char, end='')
+print ('\n')
+
+# 遍历list
+list1 = [1, 2, 3, 4, 5]
+for num1 in list1:
+    print(num1, end=' ')
+print ('\n')
+# 遍历字典
+dict1 = {'name': 'wayne','age': '23', 'sex': '男'}
+
+
+for key in dict1:
+    print( key, end= ' ')
+print ('\n')
+
+for value in dict1.values() :
+    print(value, end=' ')
+print ('\n')
+
+for x, y in [(1, 'a'), (2, 'b'), (3, 'c')]:
+    print (x, y)
