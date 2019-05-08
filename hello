@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 
+import lname
 
 def print_info(name, age, *hobby):
     print ('姓名：{}'.format(name), end='')

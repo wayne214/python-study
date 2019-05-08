@@ -10,3 +10,9 @@ from sys import version
 print(version)
 
 # 3. from ... import * 导入模块中的所有方法属性
+
+# 主模块和非主模块
+if __name__ == '__main__':
+    print('main')
+else:
+    print('not main')
