@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+# 1、使用import导入模块
+import sys, math
+print(math.pi)
+
+# 2、使用from ... import 导入模块中的方法和属性
+# from modname import name
+from sys import version
+print(version)
+
+# 3. from ... import * 导入模块中的所有方法属性
