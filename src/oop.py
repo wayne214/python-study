@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # 面向对象,创建新式类
 # 旧式类
+from hello import Hello
 class OldClass:
     pass
 
@@ -81,3 +82,9 @@ printUserInfo(gen)
 # magic method
 # 双下划线包起来的方法，都统称为"魔术方法
 print (dir(NewClass()))
+
+h = Hello()
+h.hello()
+
+print(type(Hello))
+print(type(h))
