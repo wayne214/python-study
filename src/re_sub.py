@@ -2,6 +2,10 @@
 # -*- coding: utf-8 -*-
 import re
 
+'''
+re.sub 替换
+'''
+
 a = 'Python*Android*Java-888'
 # 把字符串中的 * 字符替换成 & 字符
 sub1 = re.sub('\*', '&', a)
